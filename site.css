@@ -1,0 +1,81 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  background-color: rgba(211, 211, 211, 0.948);
+  padding: 4px;
+  color: rgb(9, 1, 2);
+}
+
+h1,
+h2 {
+  color: darkblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#headshot {
+  border: 1px solid;
+  padding: 2px;
+  margin: 8px;
+  border-radius: 8px;
+  max-width: 50px;
+}
+
+.experience {
+  border: inset 1px;
+  margin-bottom: 4px;
+  padding: 4px;
+  background-color: white;
+  color: black;
+}
+
+.experience .title {
+  font-weight: bold;
+}
+
+footer {
+  background-color: black;
+  color: lightblue;
+  text-align: center;
+  padding: 2px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+#menu {
+  float: right;
+}
+
+#menu li {
+  display: inline;
+  padding: 8px;
+  background-color: darkgray;
+}
+
+#menu li a {
+  color: white !important;
+  text-decoration: none;
+}
+
+#menu li.active {
+  background-color: darkblue;
+}
+
+header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* maximal margin from left -> shifting to rih=ght */
+header #menu {
+  margin-left: auto;
+}
+
+/* header #headshot, header #siteName, header #menu {
+  display: inline;
+  vertical-align: middle;
+} */
