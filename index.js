@@ -42,7 +42,9 @@ function clearMessage() {
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  showMessage("Please wait, sending your email");
+  const contact = new Contact(contactForm);
+  contact.send();
+  // showMessage("Please wait, sending your message ... Thank you: " + contact.fullName);
 });
 
 const experiences = document.getElementsByClassName("experience");
@@ -54,4 +56,31 @@ for (let x = 0; x < experiences.length; x++) {
   item.addEventListener("mouseleave", function (event) {
     event.target.style = "";
   });
+}
+
+class Contact {
+
+  constructor(form) {
+    this.fullName = form.elements['fullName'].value;
+    this.email = form.elements['email'].value;
+    this.subject = form.elements['subject'].value;
+    this.body = form.elements['msg'].value;
+  }
+
+  fullName = "";
+  email = "";
+  subject = "";
+  body = "";
+
+  send() {
+    console.info(this.formatMEssage());
+    showMessage("We're not sending emails yet .. feature for version 2.");
+  }
+
+  formatMEssage() {
+    return `To: ${this.fullName}
+            Email: ${this.email}
+            Subject: ${this.subject}
+            Body: ${this.body}`;
+  }
 }
