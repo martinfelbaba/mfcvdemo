@@ -3,22 +3,26 @@ body {
 }
 
 main {
-  background-color: rgba(211, 211, 211, 0.948);
+  background-color: rgb(197, 197, 197); 
   padding: 4px;
-  color: rgb(9, 1, 2);
+  color: #202020;
+  grid-area: main;
 }
 
-h1,
-h2 {
+aside {
+  grid-area: aside;
+}
+
+h1, h2 {
   color: darkblue;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #headshot {
-  border: 1px solid;
+  border: 1px solid #808080;
   padding: 2px;
   margin: 8px;
-  border-radius: 8px;
+  border-radius: 8px; 
   max-width: 50px;
 }
 
@@ -27,7 +31,7 @@ h2 {
   margin-bottom: 4px;
   padding: 4px;
   background-color: white;
-  color: black;
+  color: #222; 
 }
 
 .experience .title {
@@ -35,7 +39,7 @@ h2 {
 }
 
 footer {
-  background-color: black;
+  background-color: #202020;
   color: lightblue;
   text-align: center;
   padding: 2px;
@@ -43,16 +47,13 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-}
-
-#menu {
-  float: right;
+  grid-area: footer;
 }
 
 #menu li {
   display: inline;
   padding: 8px;
-  background-color: darkgray;
+  background-color: rgb(42, 40, 40);
 }
 
 #menu li a {
@@ -61,21 +62,39 @@ footer {
 }
 
 #menu li.active {
-  background-color: darkblue;
+  background-color: darkslateblue;
+}
+
+#menu {
+  float: right;
 }
 
 header {
   display: flex;
   justify-content: start;
   align-items: center;
+  grid-area: header;
 }
 
-/* maximal margin from left -> shifting to rih=ght */
+/* maximal margin from left -> shifting to right */
 header #menu {
   margin-left: auto;
 }
 
-/* header #headshot, header #siteName, header #menu {
-  display: inline;
-  vertical-align: middle;
-} */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  grid-template-columns: auto 200px;
+  grid-gap: 8px;
+}
+
+
+
+
+
+
+
+
