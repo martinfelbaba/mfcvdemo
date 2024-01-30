@@ -1,4 +1,6 @@
-// name of file: index.js
+// index.js
+
+import ContactForm from "./Contact.js";
 
 // var number = 5;
 // let name = "Martin";
@@ -8,6 +10,8 @@
 // // writing to document (DOM)
 // document.writeln(name + number);
 //alert("Hello World");
+
+
 
 const formInfo = document.getElementById("formInfo");
 
@@ -42,7 +46,7 @@ function clearMessage() {
 const contactForm = document.getElementById("contactForm");
 contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const contact = new Contact(contactForm);
+  const contact = new ContactForm(contactForm);
   contact.send();
   // showMessage("Please wait, sending your message ... Thank you: " + contact.fullName);
 });
@@ -56,31 +60,4 @@ for (let x = 0; x < experiences.length; x++) {
   item.addEventListener("mouseleave", function (event) {
     event.target.style = "";
   });
-}
-
-class Contact {
-
-  constructor(form) {
-    this.fullName = form.elements['fullName'].value;
-    this.email = form.elements['email'].value;
-    this.subject = form.elements['subject'].value;
-    this.body = form.elements['msg'].value;
-  }
-
-  fullName = "";
-  email = "";
-  subject = "";
-  body = "";
-
-  send() {
-    console.info(this.formatMEssage());
-    showMessage("We're not sending emails yet .. feature for version 2.");
-  }
-
-  formatMEssage() {
-    return `To: ${this.fullName}
-            Email: ${this.email}
-            Subject: ${this.subject}
-            Body: ${this.body}`;
-  }
 }
