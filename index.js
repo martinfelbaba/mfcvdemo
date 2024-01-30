@@ -19,7 +19,7 @@ if (hasJob) {
 }
 
 //sunday
-let today = new Date("01/28/2024");
+let today = new Date();
 //let today = new Date();
 let dayOfWeek = today.getDay();
 
@@ -29,7 +29,12 @@ if (dayOfWeek === 0 || dayOfWeek === 6) {
   );
 }
 
+const formInfo = document.getElementById("formInfo");
+
 function showMessage(message) {
-  document.writeln("<p>" + message + "</p>");
-  document.writeln("<hr />");
+  formInfo.innerHTML = "<p>" + message + "</p>";
+}
+
+function clearMessage() {
+  formInfo.innerHTML = "";
 }
