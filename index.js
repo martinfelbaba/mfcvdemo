@@ -9,6 +9,8 @@
 // document.writeln(name + number);
 //alert("Hello World");
 
+const formInfo = document.getElementById("formInfo");
+
 let hasJob = false;
 if (hasJob) {
   // I have a job
@@ -29,12 +31,27 @@ if (dayOfWeek === 0 || dayOfWeek === 6) {
   );
 }
 
-const formInfo = document.getElementById("formInfo");
-
 function showMessage(message) {
   formInfo.innerHTML = "<p>" + message + "</p>";
 }
 
 function clearMessage() {
   formInfo.innerHTML = "";
+}
+
+const contactForm = document.getElementById("contactForm");
+contactForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  showMessage("Please wait, sending your email");
+});
+
+const experiences = document.getElementsByClassName("experience");
+for (let x = 0; x < experiences.length; x++) {
+  const item = experiences[x];
+  item.addEventListener("mouseenter", function (event) {
+    event.target.style = "background-color: #CCCCCC;";
+  });
+  item.addEventListener("mouseleave", function (event) {
+    event.target.style = "";
+  });
 }
